@@ -20,8 +20,6 @@ router.get('/:id',(request,response) => {
 })
 
 router.post('/',(request,response) => {
-  console.log(request.body)
-  console.log(request.originalUrl)
   const account = {
     id: accounts.length + 1,
     name: request.body.name
