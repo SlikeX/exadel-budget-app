@@ -10,10 +10,10 @@ router.get('/:id', (request, response) => {
 });
 
 router.post('/', (request, response) => {
-  response.send('Expense')
+  response.send('Expense post')
 })
 router.delete('/:id', (request, response) => {
-  response.send(`пше Expense ${request.params.id}`)
+  response.send(`delete Expense ${request.params.id}`)
 })
 
 module.exports = router

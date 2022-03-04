@@ -19,7 +19,7 @@ router.get('/:id',(request,response) => {
     response.status(404).send('Categorie\'s list is empty')
   }
   const category = JSON.stringify(categories[request.params.id])
-  response.send(`Categorie\'s ID is ${request.params.id} ${category}`)
+  response.send(`Categorie ${request.params.id} is ${category}`)
 })
 
 router.post('/',(request,response) => {

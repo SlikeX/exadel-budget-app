@@ -3,7 +3,7 @@ const express = require('express');
 const accountsRoute = require('./routes/accounts.js');
 const categoriesRoute = require('./routes/categories.js');
 const expenseRoute = require('./routes/expense.js')
-const incomeRoute = require('./routes/expense.js')
+const incomeRoute = require('./routes/income.js')
 
 const app = express();
 app.use(express.json());
