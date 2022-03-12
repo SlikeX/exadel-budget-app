@@ -4,11 +4,11 @@ const router = express.Router();
 
 const accounts = [
   {id : 1, name: 'SlikeX'}
-]
+];
 
 router.get('/',(request,response) => {
   response.send(accounts)
-})
+});
 
 router.get('/:id',(request,response) => {
   console.log(accounts.length == 0)
@@ -17,7 +17,7 @@ router.get('/:id',(request,response) => {
   }
   const account = JSON.stringify(accounts[request.params.id])
   response.send(`Account\'s ID is ${request.params.id} ${account}`)
-})
+});
 
 router.post('/',(request,response) => {
   const account = {
@@ -26,6 +26,6 @@ router.post('/',(request,response) => {
   };
   accounts.push(account);
   response.send(account)
-})
+});
 
 module.exports = router

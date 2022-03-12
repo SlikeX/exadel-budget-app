@@ -11,9 +11,10 @@ router.get('/:id', (request, response) => {
 
 router.post('/', (request, response) => {
   response.send('Income post')
-})
+});
+
 router.delete('/:id', (request, response) => {
   response.send(`Income delete ${request.params.id}`)
-})
+});
 
 module.exports = router
