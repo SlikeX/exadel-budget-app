@@ -11,7 +11,6 @@ router.get('/',(request,response) => {
 });
 
 router.get('/:id',(request,response) => {
-  console.log(accounts.length == 0)
   if(accounts.length == 0){
     response.status(404).send('Account\'s list is empty')
   }
