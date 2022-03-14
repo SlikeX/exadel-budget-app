@@ -1,0 +1,24 @@
+{
+  "name": "budgetapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SlikeX/exadel-budget-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SlikeX/exadel-budget-app/issues"
+  },
+  "homepage": "https://github.com/SlikeX/exadel-budget-app#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
