@@ -1,4 +1,4 @@
-const db = require('./database');
+const db = require('../database/database');
 
 const adminGuard = (req, res, next) => {
   const user = db.getUserByEmail(req.user.email);

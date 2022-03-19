@@ -11,6 +11,9 @@ const authentication = require('./routes/auth')
 const app = express();
 app.use(express.json());
 app.use(cors());
+router.use(passport.initialize());
+router.use(express.json());
+router.use(express.urlencoded({ extended: false }));
 
 app.get('/',(request,response) => {
   response.send('Hello World')
