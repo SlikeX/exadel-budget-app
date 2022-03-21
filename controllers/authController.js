@@ -6,6 +6,15 @@ const db = require('../database/database');
 const { jwtCallback } = require('../utils/passport');
 const { adminGuard } = require('../utils/guards');
 
+function getUserByEmail(email) {
+  return users.find((user) => user.email === email);
+};
+
+function loginUser(email, password) {
+  const user = getUserByEmail(email);
+  if (user && bcrypt.compareSync(password, user.password)) return user;
+};
+
 const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.JWT_SECRET,

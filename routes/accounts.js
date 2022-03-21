@@ -7,10 +7,6 @@ const {
 } = require('../controllers/acountController')
 
 
-const accounts = [
-  {id : 1, name: 'SlikeX'}
-];
-
 router.get('/', allUsers);
 
 router.get('/:id', userById);
