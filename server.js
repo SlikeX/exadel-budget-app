@@ -1,6 +1,7 @@
 
 const express = require('express');
 const cors = require('cors');
+require('./database/db');
 
 const accountsRoute = require('./routes/accounts.js');
 const categoriesRoute = require('./routes/categories.js');

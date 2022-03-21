@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const {getAllExpenses} = require('../controllers/exprenseController');
-const {getExpById} = require('../controllers/exprenseController');
-const {addExprense} = require('../controllers/exprenseController');
-const {removeExprense} = require('../controllers/exprenseController');
+const {getAllExpenses} = require('../controllers/expenseController');
+const {getExpById} = require('../controllers/expenseController');
+const {addExprense} = require('../controllers/expenseController');
+const {removeExprense} = require('../controllers/expenseController');
 
 router.get('/', getAllExpenses);
 

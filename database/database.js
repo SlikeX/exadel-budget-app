@@ -21,13 +21,6 @@ const users = [
   },
 ];
 
-const categories = [
-  'transport',
-  'health',
-  'sport',
-  'entertament'
-];
-
 function getUserByEmail(email) {
   return users.find((user) => user.email === email);
 };
@@ -39,7 +32,6 @@ function loginUser(email, password) {
 
 module.exports = {
   users,
-  categories,
   loginUser,
   getUserByEmail,
 };
