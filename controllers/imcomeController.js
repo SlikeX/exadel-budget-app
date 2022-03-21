@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Income = require('../models/incomeModel');
 
 
-async function getAllExpenses(req, res) {
+async function getAllIncomes(req, res) {
   const income = await Income.find();
   res.send(income);
 };
 
-const getExpById = (req, res) => {
+async function getIncById(req, res){
   const income = await Income.findById(req.params.id);
   if (income.length === 0) {
     return res.status(404).send('No such income');
@@ -15,7 +15,7 @@ const getExpById = (req, res) => {
   res.status(200).send(income);
 };
 
-const addExprense = (req, res) =>{
+async function addIncome(req, res){
   const income = new Income({
     income: req.body.income,
   });
@@ -23,7 +23,7 @@ const addExprense = (req, res) =>{
   res.send(income);
 };
 
-const removeExprense = (req, res) =>{
+async function removeIncome(req, res){
   await Income.findOneAndDelete({ id: req.body.id });
   res.send(`Income has been deleted`);
 };
