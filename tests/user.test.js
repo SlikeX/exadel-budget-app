@@ -1,7 +1,7 @@
 const app = require('../server');
 const supertest = require('supertest');
-const testUserId = '';
-const testUserMail = '';
+const testUserId = '507f191e810c19729de860ea';
+const testUserMail = 'slike@test.com';
 
 describe('Check getting all the users', ()=>{
   test('Users', async ()=> {
