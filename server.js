@@ -27,3 +27,5 @@ app.use('/income',incomeRoute);
 app.use('/auth', authentication);
 
 app.listen(3000);
+
+module.exports = app;
