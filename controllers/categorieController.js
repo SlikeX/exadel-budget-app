@@ -1,21 +1,26 @@
-const {categories} = require('../database/database');
+const mongoose = require('mongoose');
+const Category = require('../models/categoryModel');
 
-const getAllcategories = (req, res) => {
-  res.send(categories);
+
+async function getAllcategories(req, res){
+  const category = await Category.find({});
+  res.send(category);
 }
 
-const getCatById = (req, res) =>{
-  if(categories.length == 0){
-    res.status(404).send('Categorie\'s list is empty')
+async function getCatById(req, res){
+  const category = await Category.findById(req.params.id)
+  if (category.length === 0) {
+    return res.status(404).send('No such category');
   }
-  const category = JSON.stringify(categories[req.params.id])
-  res.send(`Categorie ${req.params.id} is ${category}`)
+  res.status(200).send(category);
 };
 
 const addCategory = (req, res) =>{
-  const category = req.body
-  categories.push(category);
-  res.send(category)
+  const category = new Category({
+    category: req.body.category,
+  });
+  await category.save();
+  res.send(category);
 }
 
 module.exports = {

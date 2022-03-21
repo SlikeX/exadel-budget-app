@@ -25,7 +25,7 @@ passport.use(new JwtStrategy(opts, jwtCallback));
 const auth = passport.authenticate('jwt', { session: false });
 
 const authUser = (req, res) => {
-  const user = db.loginUser(req.body.email, req.body.password);
+  const user = loginUser(req.body.email, req.body.password);
 
   if (user) {
     const payload = {
