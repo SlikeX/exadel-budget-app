@@ -1,20 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const {getAllExpenses} = require('../controllers/expenseController');
+const {getExpById} = require('../controllers/expenseController');
+const {addExprense} = require('../controllers/expenseController');
+const {removeExprense} = require('../controllers/expenseController');
 
-router.get('/', (request, response) => {
-  response.send('Expense')
-});
+router.get('/', getAllExpenses);
 
-router.get('/:id', (request, response) => {
-  response.send(`Expense ID ${request.params.id}`)
-});
+router.get('/:id', getExpById);
 
-router.post('/', (request, response) => {
-  response.send('Expense post')
-});
+router.post('/', addExprense);
 
-router.delete('/:id', (request, response) => {
-  response.send(`delete Expense ${request.params.id}`)
-});
+router.delete('/:id', removeExprense);
 
 module.exports = router

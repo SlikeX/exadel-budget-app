@@ -1,30 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const {
+  allUsers,
+  userById,
+  userSend
+} = require('../controllers/acountController')
 
 
-const accounts = [
-  {id : 1, name: 'SlikeX'}
-];
+router.get('/', allUsers);
 
-router.get('/',(request,response) => {
-  response.send(accounts)
-});
+router.get('/:id', userById);
 
-router.get('/:id',(request,response) => {
-  if(accounts.length == 0){
-    response.status(404).send('Account\'s list is empty')
-  }
-  const account = JSON.stringify(accounts[request.params.id])
-  response.send(`Account\'s ID is ${request.params.id} ${account}`)
-});
-
-router.post('/',(request,response) => {
-  const account = {
-    id: accounts.length + 1,
-    name: request.body.name
-  };
-  accounts.push(account);
-  response.send(account)
-});
+router.post('/', userSend);
 
 module.exports = router

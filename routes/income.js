@@ -1,20 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const {getAllIncomes} = require('../controllers/imcomeController');
+const {getIncById} = require('../controllers/imcomeController');
+const {addIncome} = require('../controllers/imcomeController');
+const {removeIncome} = require('../controllers/imcomeController');
 
-router.get('/', (request, response) => {
-  response.send('Income')
-});
+router.get('/', getAllIncomes);
 
-router.get('/:id', (request, response) => {
-  response.send(`Income ID ${request.params.id}`)
-});
+router.get('/:id', getIncById);
 
-router.post('/', (request, response) => {
-  response.send('Income post')
-});
+router.post('/', addIncome);
 
-router.delete('/:id', (request, response) => {
-  response.send(`Income delete ${request.params.id}`)
-});
+router.delete('/:id', removeIncome);
 
 module.exports = router
