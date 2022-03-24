@@ -1,4 +1,4 @@
-const User = require('../models/uaserModels');
+const User = require('../models/userModels');
 
 
 async function allUsers (req, res){
@@ -6,7 +6,7 @@ async function allUsers (req, res){
   if(users.length === 0){
     return res.status(400).send()
   }
-  return res.status(200).send(users)
+  res.status(200).send(users)
 };
 
 async function userById (req, res){
@@ -18,7 +18,7 @@ async function userById (req, res){
   if(!user){
     return res.status(404).send();
   }
-  res.send(user)
+  res.status(200).send(user)
  }catch(error){
   res.status(500).send();
  }
@@ -28,7 +28,7 @@ async function userSend (req, res){
   try{
     const user = await User.findByCredentials(req.body.email, req.body.password);
     const token = await user.generateAuthToken();
-    res.send({user, token});
+    res.status(201).send({user, token});
   }catch(error){
     res.status(400).send();
   }
