@@ -1,0 +1,41 @@
+@import '~normalize.css';
+
+.header {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  background: rgb(254, 145, 137);
+  background: linear-gradient(
+    155deg,
+    rgba(254, 145, 137, 1) 0%,
+    rgba(237, 151, 211, 1) 50%,
+    rgba(133, 170, 223, 1) 100%
+  );
+  border-radius: 5px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  &__logo {
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  &__link-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0;
+    &__item {
+      cursor: pointer;
+    }
+  }
+  &__profile {
+  }
+}

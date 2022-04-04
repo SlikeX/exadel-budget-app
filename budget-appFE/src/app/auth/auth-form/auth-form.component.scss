@@ -3,7 +3,10 @@
   flex-direction: column;
   align-items: center;
   padding-top: 10rem;
-
+  width: 100%;
+  height: 78vh;
+  background: url(../../assets/money-savings-currency-fingers.jpg) no-repeat;
+  background-size: cover;
   &__row {
     width: 30rem;
   }
